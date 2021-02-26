@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS services CASCADE;
+
+CREATE TABLE administrator (
+  id SERIAL PRIMARY KEY NOT NULL,
+  email NVARCHAR(40) NOT NULL,
+  password BINARY(64) NOT NULL
+)
+
+CREATE TABLE services (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE service_details (
+  id SERIAL PRIMARY KEY NOT NULL,
+  services_id INTEGER REFERENCES services(id) ON DELETE CASCADE,
+  image VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL
+)
