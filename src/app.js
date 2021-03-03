@@ -53,6 +53,7 @@ module.exports = function application(
   app.use('/', indexRouter);
   app.use("/api", sendMail);
   app.use('/users', usersRouter);
+
   app.get('/users', checkJwt, async (req, res) => {
     res.send('this is a test.')
   })
@@ -80,6 +81,7 @@ module.exports = function application(
       res.send(body)
     })
   })
+  
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
     next(createError(404));
@@ -95,6 +97,32 @@ module.exports = function application(
     res.status(err.status || 500);
     res.render('error');
   });
+
+
+  const db = require("./models");
+  const Role = db.role;
+
+  db.sequelize.sync({force: true}).then(() => {
+    console.log('Drop and Resync Db');
+    initial();
+  });
+
+  function initial() {
+    Role.create({
+      id: 1,
+      name: "user"
+    });
+  
+    Role.create({
+      id: 2,
+      name: "moderator"
+    });
+  
+    Role.create({
+      id: 3,
+      name: "admin"
+    });
+  }
 
   const oauth2Client = new OAuth2(
     process.env.OAUTH_CLIENT_ID,
