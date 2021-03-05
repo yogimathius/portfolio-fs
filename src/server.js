@@ -5,6 +5,7 @@ const server = require("http").Server(app);
 const auth = require('./utils/auth')
 const request = require('request');
 require('dotenv').config()
+const admin = require('firebase-admin');
 
 const WebSocket = require("ws");
 const wss = new WebSocket.Server({ server });
