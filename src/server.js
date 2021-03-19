@@ -1,9 +1,9 @@
 const PORT = process.env.PORT || 8001;
 const ENV = require("./environment");
+
 const app = require("./app")(ENV);
 const server = require("http").Server(app);
-const auth = require('./utils/auth')
-const request = require('request');
+
 require('dotenv').config()
 const admin = require('firebase-admin');
 

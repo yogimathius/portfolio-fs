@@ -1,75 +1,148 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
+// const fs = require("fs");
+// const path = require('path');
+
+// const express = require('express');
+// const bodyParser = require("body-parser");
+// const helmet = require("helmet");
+// const cors = require("cors");
+
+// const app = express();
+
+// const db = require("./db");
+
+// const sendMail = require("./routes/sendMail");
+// const services = require('./routes/services');
+
+// function read(file) {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(
+//       file,
+//       {
+//         encoding: "utf-8"
+//       },
+//       (error, data) => {
+//         if (error) return reject(error);
+//         resolve(data);
+//       }
+//     );
+//   });
+// }
+
+// module.exports = function application(
+//   ENV ) {
+
+//  app.use(cors());
+//  app.use(helmet());
+//  app.use(express.json());
+//  app.use(express.urlencoded({
+//    extended: true
+//  }));
+
+//  app.use(express.json());
+
+//  app.use("/api", sendMail);
+//  app.use("/api", services(db));
+//  app.use('/uploads', express.static('uploads'))
+
+
+//   app.get("/", (req, res) => {
+//     res.json({ message: "Welcome to sovereign birth api." });
+//   });
+
+//   if (ENV === "development" || ENV === "test") {
+//     console.log('ping for development');
+//     Promise.all([
+//       read(path.resolve(__dirname, `db/schema/create.sql`)),
+//       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
+//     ])
+//       .then(([create, seed]) => {
+//         app.get("/api/debug/reset", (request, response) => {
+//           console.log('ping on reset');
+//           db.query(create)
+//             .then(() => db.query(seed))
+//             .then(() => {
+//               console.log("Database Reset");
+//               response.status(200).send("Database Reset");
+//             });
+//         });
+//       })
+//       .catch(error => {
+//         console.log(`Error setting up the reset route: ${error}`);
+//       });
+//   }
+
+//   app.close = function() {
+//     return db.end();
+//   };
+
+//   return app;
+// }
+
+const fs = require("fs");
+const path = require("path");
+
+const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
-const logger = require('morgan');
+const cors = require("cors");
+
 const app = express();
-const indexRouter = require('./routes/index');
+
+const db = require("./db");
+
 const sendMail = require("./routes/sendMail");
-const mongoose = require('mongoose');
-
-mongoose.connect(
-  `mongodb+srv://admin:${process.env.MONGOADMINPW}@cluster0.lvzue.mongodb.net/birth?retryWrites=true&w=majority`,
-  { useNewUrlParser: true, useUnifiedTopology: true })
-   .then(() => {
-     console.log('Connected to database');
-   })
-   .catch((err) => {
-     console.log('Error connecting to DB', err.message);
-   });
-
-module.exports = function application(
-  ENV,
-  actions = { updateComments: () => {}, deleteComments: () => {} }
-) {
-
-  app.use(function (req, res, next) {
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    // Pass to next layer of middleware
-    next();
- });
+const services = require('./routes/services');
 
 
- app.use(helmet());
- app.use(bodyparser.json());
-
- // parse requests of content-type - application/x-www-form-urlencoded
- app.use(bodyparser.urlencoded({ extended: true }));
-
-
-  app.use(logger('dev'));
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
-  app.use(cookieParser());
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use('/uploads', express.static('uploads'))
-  app.use('/', indexRouter);
-  app.use("/api", sendMail);
-  
-  // catch 404 and forward to error handler
-  app.use(function(req, res, next) {
-    next(createError(404));
-  });
-
-  // error handler
-  app.use(function(err, req, res, next) {
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
+function read(file) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(
+      file,
+      {
+        encoding: "utf-8"
+      },
+      (error, data) => {
+        if (error) return reject(error);
+        resolve(data);
+      }
+    );
   });
 }
 
+module.exports = function application(
+  ENV,
+  actions = { updateAppointment: () => {} }
+) {
+  app.use(cors());
+  app.use(helmet());
+  app.use(bodyparser.json());
+
+  app.use("/api", services(db));
+  app.use('/uploads', express.static('uploads'))
+
+  if (ENV === "development" || ENV === "test") {
+    Promise.all([
+      read(path.resolve(__dirname, `db/schema/create.sql`)),
+      read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
+    ])
+      .then(([create, seed]) => {
+        app.get("/api/debug/reset", (request, response) => {
+          db.query(create)
+            .then(() => db.query(seed))
+            .then(() => {
+              console.log("Database Reset");
+              response.status(200).send("Database Reset");
+            });
+        });
+      })
+      .catch(error => {
+        console.log(`Error setting up the reset route: ${error}`);
+      });
+  }
+
+  app.close = function() {
+    return db.end();
+  };
+
+  return app;
+};
