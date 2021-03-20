@@ -1,5 +1,5 @@
 const pg = require("pg");
-
+console.log(process.env.DBHOST);
 const client = new pg.Client({
   user: process.env.DBUSER,
   password: process.env.DBPASSWORD,

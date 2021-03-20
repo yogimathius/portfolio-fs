@@ -1,83 +1,3 @@
-// const fs = require("fs");
-// const path = require('path');
-
-// const express = require('express');
-// const bodyParser = require("body-parser");
-// const helmet = require("helmet");
-// const cors = require("cors");
-
-// const app = express();
-
-// const db = require("./db");
-
-// const sendMail = require("./routes/sendMail");
-// const services = require('./routes/services');
-
-// function read(file) {
-//   return new Promise((resolve, reject) => {
-//     fs.readFile(
-//       file,
-//       {
-//         encoding: "utf-8"
-//       },
-//       (error, data) => {
-//         if (error) return reject(error);
-//         resolve(data);
-//       }
-//     );
-//   });
-// }
-
-// module.exports = function application(
-//   ENV ) {
-
-//  app.use(cors());
-//  app.use(helmet());
-//  app.use(express.json());
-//  app.use(express.urlencoded({
-//    extended: true
-//  }));
-
-//  app.use(express.json());
-
-//  app.use("/api", sendMail);
-//  app.use("/api", services(db));
-//  app.use('/uploads', express.static('uploads'))
-
-
-//   app.get("/", (req, res) => {
-//     res.json({ message: "Welcome to sovereign birth api." });
-//   });
-
-//   if (ENV === "development" || ENV === "test") {
-//     console.log('ping for development');
-//     Promise.all([
-//       read(path.resolve(__dirname, `db/schema/create.sql`)),
-//       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
-//     ])
-//       .then(([create, seed]) => {
-//         app.get("/api/debug/reset", (request, response) => {
-//           console.log('ping on reset');
-//           db.query(create)
-//             .then(() => db.query(seed))
-//             .then(() => {
-//               console.log("Database Reset");
-//               response.status(200).send("Database Reset");
-//             });
-//         });
-//       })
-//       .catch(error => {
-//         console.log(`Error setting up the reset route: ${error}`);
-//       });
-//   }
-
-//   app.close = function() {
-//     return db.end();
-//   };
-
-//   return app;
-// }
-
 const fs = require("fs");
 const path = require("path");
 
@@ -85,7 +5,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
-
+const timeout = require('connect-timeout')
 const app = express();
 
 const db = require("./db");
@@ -115,8 +35,18 @@ module.exports = function application(
 ) {
   app.use(cors());
   app.use(helmet());
+  app.use(timeout('5s'))
   app.use(bodyparser.json());
+  app.use(haltOnTimedout)
 
+  function haltOnTimedout (req, res, next) {
+    if (!req.timedout) next()
+  }
+
+  app.get("/", (req, res) => {
+    res.json({ message: "Welcome to birth api application." });
+  });  
+  
   app.use("/api", services(db));
   app.use('/uploads', express.static('uploads'))
 
