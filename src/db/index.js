@@ -1,11 +1,11 @@
 const pg = require("pg");
-
+const password
 const client = new pg.Client({
-  user: "ctnuuhzxxwhwsi",
-  process.env.DBPASSWORD: "6b99459ba180ac20eba82a79c9ddbd81e59b9e3a929dfde8dcbfded506130e51",
-  process.env.DB: "d45flg8j9d0dui",
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  database: process.env.DB,
   port: 5432,
-  process.env.DBHOST: "ec2-18-204-101-137.compute-1.amazonaws.com",
+  host: process.env.DBHOST,
   ssl: {rejectUnauthorized: false}
 });
 
