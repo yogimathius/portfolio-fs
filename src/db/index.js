@@ -1,5 +1,6 @@
 const pg = require("pg");
 
+console.log('env: ', process.env.DATABASE_URL);
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL || ""
 });
