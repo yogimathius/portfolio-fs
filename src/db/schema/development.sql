@@ -1,11 +1,24 @@
-insert into services (title, text_body) values
-('Wild Pregnancy Mentoring', 'I believe in your intuitive pregnancy & physiological home birth vision.  I offer to walk along side you in sisterhood as I offer guidance prenatally to help forge your sovereign path.'),
-('Freebirth Support', 'Do you need support in identifying your birth vision? Do you have questions about your options? Are you confused or uncertain about something your care provider has said?'),
-('Homebirth Doula', 'I found mentorship among like minded women, I thought critically about my participation in the system, and how I could align in integrity as a birth keeper to support women in birthing in their power.'),
-('Conscious Postpartum Preparation', 'How would it feel to journey through pregnancy in full connection with your self and the little soul you are nourishing within your womb?'),
-('Prenatal Yoga', 'You have everything you need within you to birth in your power, surrounded in love, and in full connection with yourself and your baby.  Awaken the innate tools within you to support your sacred journey in full alignment with your vision for birth.'),
-('Prenatal Community Circle', 'Mommas, your body knows how it wishes to give birth. Are you ready to hear the call? Join me in a self paced pre-recorded prenatal series to cultivate your sovereign birth journey! Connect to yourself, your baby, and your vison.'),
-('Shop Products', 'Shop consciously crafted items that honor nature''s intelligence made by a momma for mommas and their little ones. All ingredients are organic, handmade, and assembled in my home.');
+insert into services (title, text_body, call_to_action) values
+('Birth Mentoring', 'You are critically thinking about your birth options so that your experience is the positive journey you desire? Perhaps you feel overwhelmed, unsure, or called to birth in one way, but are being pressured to not embrace that call. You have questions or want guidance in discerning truth from myth and how to navigate this time consciously.
+
+These calls are for all types of birth visions (hospital, home, birth centre, free birth..)
+
+$150 for 2 one-hour sessions.', 'Book'),
+('Prenatal Community Circle', 'Listen, share, explore, learn! Hear a powerful birth story, state your birth vision & fears, and feel nourished through conscious preparation and connection with a supportive network of pregnant and postpartum people.
+
+This circle is for pregnant people wanting to embark on the inner work of conscious birth preparation and postpartum people wanting to hold space for those embarking on the birth journey.
+
+Free / by donation offered on the 3rd Sunday of the month at 10am PST.', 'Sign Up!'),
+('Postpartum Community Circle', "Join in community among postpartum people to share, discuss, and listen in support of each other's journey. The circle's topic is dictated by the needs of the participants. The space maybe used to process birth experiences, share a new mother identity, talk about relationships, the postpartum transition and more.
+
+All postpartum people are welcome no matter how far along the postpartum journey you are.
+
+Free / by donation offered on the 4th Sunday of the month at 10am PST.", 'Sign Up!'),
+('Freebirth Support', 'Are you planning to freebirth your baby?
+
+Are you wanting to know more about autonomous-undisturbed birth and are seeking the presence of an experienced birth keeper to support you?', 'Tell Me More!'),
+('Homebirth Doula', 'Are you planning a homebirth with a licensed midwife and desire the support of an experienced doula who is knowledgeable & passionate about physiological undisturbed birth?', 'Yes!'),
+('Pregnancy Meditations', 'Audio meditations centred on connecting you with the inherent wisdom of your pregnant & birthing body. Explore womb connection, conscious breathing, pelvic floor awareness and more!', 'Explore');
 
 insert into serviceImages (service_id, image_url) values
 (1, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/wildpregnancy.jpeg'),
