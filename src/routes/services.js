@@ -5,7 +5,7 @@ module.exports = (db, services) => {
     console.log("ping on services");
     db.query(
       `
-        SELECT services.id, title, text_body, call_to_action, image_url
+        SELECT services.id, title, text_body, call_to_action, call_to_action_link, image_url
         FROM services
         JOIN serviceImages ON services.id = service_id;
       `
