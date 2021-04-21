@@ -9,11 +9,11 @@ $150 for 2 one-hour sessions.', 'Book'),
 This circle is for pregnant people wanting to embark on the inner work of conscious birth preparation and postpartum people wanting to hold space for those embarking on the birth journey.
 
 Free / by donation offered on the 3rd Sunday of the month at 10am PST.', 'Sign Up!'),
-('Postpartum Community Circle', "Join in community among postpartum people to share, discuss, and listen in support of each other's journey. The circle's topic is dictated by the needs of the participants. The space maybe used to process birth experiences, share a new mother identity, talk about relationships, the postpartum transition and more.
+('Postpartum Community Circle', 'Join in community among postpartum people to share, discuss, and listen in support of each others journey. The circles topic is dictated by the needs of the participants. The space maybe used to process birth experiences, share a new mother identity, talk about relationships, the postpartum transition and more.
 
 All postpartum people are welcome no matter how far along the postpartum journey you are.
 
-Free / by donation offered on the 4th Sunday of the month at 10am PST.", 'Sign Up!'),
+Free / by donation offered on the 4th Sunday of the month at 10am PST.', 'Sign Up!'),
 ('Freebirth Support', 'Are you planning to freebirth your baby?
 
 Are you wanting to know more about autonomous-undisturbed birth and are seeking the presence of an experienced birth keeper to support you?', 'Tell Me More!'),
@@ -26,5 +26,4 @@ insert into serviceImages (service_id, image_url) values
 (3, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/conscious.webp'),
 (4, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/conscious.webp'),
 (5, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/prenatalyoga.jpeg'),
-(6, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/shopproducts.webp'),
-(7, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/products.webp');
+(6, 'https://raw.githubusercontent.com/mathiusjohnson/sovereign-birth/master/public/images/shopproducts.webp');
