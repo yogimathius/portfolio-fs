@@ -12,7 +12,8 @@ CREATE TABLE services
   title VARCHAR(255) NOT NULL,
   text_body VARCHAR(2000) NOT NULL,
   call_to_action VARCHAR(50) NOT NULL,
-  call_to_action_link VARCHAR(255) NOT NULL
+  call_to_action_link VARCHAR(255) NOT NULL,
+  call_to_action_target VARCHAR(50) NOT NULL
 );
 -- ************************************************************
 -- serviceImages table
