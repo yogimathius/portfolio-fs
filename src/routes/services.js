@@ -5,7 +5,7 @@ module.exports = (db, services) => {
     console.log("ping on services");
     db.query(
       `
-        SELECT services.id, title, text_body, image_url
+        SELECT services.id, title, text_body, call_to_action image_url
         FROM services
         JOIN serviceImages ON services.id = service_id;
       `
@@ -24,11 +24,11 @@ module.exports = (db, services) => {
   router.put("/services", (req, res) => {
     console.log("req.body: ", req.body);
     const { updatedService } = req.body;
-    const { serviceId, title, text_body } = updatedService;
+    const { serviceId, title, text_body, call_to_action } = updatedService;
     console.log(serviceId, title, text_body);
-    const params = [serviceId, title, text_body];
+    const params = [serviceId, title, text_body, call_to_action];
     db.query(
-      'UPDATE services SET title = $2, text_body = $3 WHERE id = $1 returning *;',
+      'UPDATE services SET title = $2, text_body = $3, call_to_action = $4 WHERE id = $1 returning *;',
       params)
       .then((data) => {
         console.log("success in update services! ", data);
