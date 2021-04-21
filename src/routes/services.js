@@ -20,6 +20,24 @@ module.exports = (db, services) => {
       });
   });
 
+  router.get("/serviceTitles", (req, res) => {
+    console.log("ping on services");
+    db.query(
+      `
+        SELECT services.id, title
+        FROM services;
+      `
+    )
+      .then((data) => {
+        // console.log(data);
+        res.json(data.rows);
+      })
+      .catch((err) => {
+        // console.log("bad juju on services DB", err);
+        res.status(500).send("bad juju on services DB");
+      });
+  });
+
 
   router.put("/services", (req, res) => {
     console.log("req.body: ", req.body);
