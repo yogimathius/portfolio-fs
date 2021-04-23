@@ -24,3 +24,21 @@ CREATE TABLE serviceImages
   service_id INTEGER REFERENCES services(id) ON DELETE CASCADE,
   image_url VARCHAR(255)
 );
+
+CREATE TABLE singleServiceDetails
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  service_id INTEGER REFERENCES services(id) ON DELETE CASCADE,
+  serviceDetails VARCHAR(255),
+  is_list boolean,
+  service_list_id INTEGER REFERENCES serviceList(id) ON DELETE CASCADE,
+  is_button boolean,
+  button_link VARCHAR(255),
+  button_target VARCHAR(50),
+  button_text VARCHAR(255)
+);
+
+CREATE TABLE serviceList(
+  id SERIAL PRIMARY KEY NOT NULL,
+  service_id INTEGER REFERENCES services(id) ON DELETE CASCADE,
+);
