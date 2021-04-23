@@ -17,7 +17,7 @@ Free / by donation offered on the 4th Sunday of the month at 10am PST.', 'Sign U
 ('Freebirth Support', 'Are you planning to freebirth your baby?
 
 Are you wanting to know more about autonomous-undisturbed birth and are seeking the presence of an experienced birth keeper to support you?', 'Tell Me More!', '/birth-support', '_self'),
-('Homebirth Doula', 'Are you planning a homebirth with a licensed midwife and desire the support of an experienced doula who is knowledgeable & passionate about physiological undisturbed birth?', 'Yes!', '/birth-support', '_self'),
+('Homebirth Doula', 'Are you planning a homebirth with a licensed midwife and desire the support of an experienced doula who is knowledgeable & passionate about physiological undisturbed birth?', 'Yes!', '/offering/birth-support', '_self'),
 ('Pregnancy Meditations', 'Audio meditations centred on connecting you with the inherent wisdom of your pregnant & birthing body. Explore womb connection, conscious breathing, pelvic floor awareness and more!', 'Explore', '/', '_self');
 
 insert into serviceImages (service_id, image_url) values
