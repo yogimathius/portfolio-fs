@@ -6,12 +6,13 @@ const bodyparser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
 const timeout = require('connect-timeout')
+
 const app = express();
 
 const db = require("./db");
 
 const sendMail = require("./routes/sendMail");
-const services = require('./routes/services');
+const projects = require('./routes/projects');
 
 
 function read(file) {
@@ -47,7 +48,7 @@ module.exports = function application(
     res.json({ message: "Welcome to birth api application." });
   });  
   
-  app.use("/api", services(db));
+  app.use("/api", projects(db));
   app.use('/uploads', express.static('uploads'))
 
   if (ENV === "development" || ENV === "test") {
