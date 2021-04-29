@@ -35,7 +35,6 @@ module.exports = function application(
 ) {
   app.use(cors());
   app.use(helmet());
-  app.use(timeout('5s'))
   app.use(bodyparser.json());
   app.use(haltOnTimedout)
 
