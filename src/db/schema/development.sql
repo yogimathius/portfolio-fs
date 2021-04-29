@@ -1,9 +1,9 @@
-insert into projects (title, text_body, project_url) values
-('Freeflow Social Network', 'React.js with Redux project using express.js backend (still in development)', 'https://freeflow-network.netlify.app/'),
-('Sovereign Birth Business Website', 'Business website with admin login. Uses React Front End with Express Back End, Postgresql persistent data, and Tailwind CSS.', 'https://sovereign-birth.netlify.app/'),
-('Interview Scheduler App', 'React.js project using express.js backend, with useReducer hook and websocket', 'https://interview-scheduler-mj.netlify.app/'),
-('Yogi Mathius Personal Blog', 'Unfinished personal blog for yoga', 'https://yogimathius.netlify.app/'),
-('Johnson Landscaping Website', 'Previous professions business website.', 'https://johnsonlandscaping.netlify.app/index.html');
+insert into projects (title, text_body, project_url, page_id) values
+('Freeflow Social Network', 'React.js with Redux project using express.js backend (still in development)', 'https://freeflow-network.netlify.app/', 'freeflow'),
+('Sovereign Birth Business Website', 'Business website with admin login. Uses React Front End with Express Back End, Postgresql persistent data, and Tailwind CSS.', 'https://sovereign-birth.netlify.app/', 'sovereign-birth'),
+('Interview Scheduler App', 'React.js project using express.js backend, with useReducer hook and websocket', 'https://interview-scheduler-mj.netlify.app/', 'scheduler'),
+('Yogi Mathius Personal Blog', 'Unfinished personal blog for yoga', 'https://yogimathius.netlify.app/', 'yogi-mathius'),
+('Johnson Landscaping Website', 'Previous professions business website.', 'https://johnsonlandscaping.netlify.app/index.html', 'johnson-landscaping');
 
 insert into projectImages (project_id, image_url) values
 (1, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/freeflow.png'),
