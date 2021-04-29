@@ -36,7 +36,6 @@ module.exports = function application(
   app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
-  app.use(haltOnTimedout)
 
   app.get("/", (req, res) => {
     res.json({ message: "Welcome to birth api application." });
