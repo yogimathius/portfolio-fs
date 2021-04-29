@@ -5,7 +5,6 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
-const timeout = require('connect-timeout')
 
 const app = express();
 
@@ -39,10 +38,6 @@ module.exports = function application(
   app.use(timeout('5s'))
   app.use(bodyparser.json());
   app.use(haltOnTimedout)
-
-  function haltOnTimedout (req, res, next) {
-    if (!req.timedout) next()
-  }
 
   app.get("/", (req, res) => {
     res.json({ message: "Welcome to birth api application." });
