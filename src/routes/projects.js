@@ -28,20 +28,22 @@ module.exports = (db, projects) => {
     });
   });
 
-  router.get("/projectTitles", (req, res) => {
+  router.get("/projects/:id", (req, res) => {
+    const params = [req.params.id];
     console.log("ping on projects");
     db.query(
       `
-        SELECT projects.id, title
-        FROM projects;
-      `
+        SELECT *
+        FROM projects WHERE page_id = $1;
+      `,
+      (params)
     )
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         res.json(data.rows);
       })
       .catch((err) => {
-        // console.log("bad juju on projects DB", err);
+        console.log("bad juju on projects DB", err);
         res.status(500).send("bad juju on projects DB");
       });
   });
