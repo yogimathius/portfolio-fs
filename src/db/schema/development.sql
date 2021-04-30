@@ -1,9 +1,9 @@
 insert into projects (title, text_body, project_url, page_id) values
-('Freeflow Social Network', 'React.js with Redux project using express.js backend (still in development)', 'https://freeflow-network.netlify.app/', 'freeflow'),
-('Sovereign Birth Business Website', 'Business website with admin login. Uses React Front End with Express Back End, Postgresql persistent data, and Tailwind CSS.', 'https://sovereign-birth.netlify.app/', 'sovereign-birth'),
-('Interview Scheduler App', 'React.js project using express.js backend, with useReducer hook and websocket', 'https://interview-scheduler-mj.netlify.app/', 'scheduler'),
-('Yogi Mathius Personal Blog', 'Unfinished personal blog for yoga', 'https://yogimathius.netlify.app/', 'yogi-mathius'),
-('Johnson Landscaping Website', 'Previous professions business website.', 'https://johnsonlandscaping.netlify.app/index.html', 'johnson-landscaping');
+('Freeflow Social Network', 'This project required me to build a fully responsive Social Media platform with a complex state management system. I used HTML5 and TailwindCSS with a combination of Grid and Flexbox, and React with Redux state management to securely handle the constant state updates.', 'https://freeflow-network.netlify.app/', 'freeflow'),
+('Sovereign Birth Business Website', 'This business website required me to implement a secure admin login using Firebase for content management privileges with both front end and back end authentication and authorization. I used a React Front End with both react hooks and custom hooks (useVisualMode) nd an Express Back End, Postgresql persistent data, and Tailwind CSS.', 'https://sovereign-birth.netlify.app/', 'sovereign-birth'),
+('Interview Scheduler App', 'This project was my first full introduction to building a full-stack application using React and Express. I used Storybook, Jest and Cypress testing to provide over 80% test coverage in a functional component app. The application is also hooked up to a websocket for real-time updates, and was my first experience to using a reducer.', 'https://interview-scheduler-mj.netlify.app/', 'scheduler'),
+('Yogi Mathius Personal Blog', 'This project required me to build a fully responsive business website, experimenting with more advanced CSS (parallax, hover glow effects, transitions) to deepen my front-end knowledge. ', 'https://yogimathius.netlify.app/', 'yogi-mathius'),
+('Johnson Landscaping Website', 'This project was my first website, which had the privilege of being my personal business website from my previous profession. I used HTML5, along with CSS flexbox to build a fully responsive website, along with a PHP script for contacting my business.', 'https://johnsonlandscaping.netlify.app/index.html', 'johnson-landscaping');
 
 insert into projectImages (project_id, image_url) values
 (1, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/freeflow.png'),

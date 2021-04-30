@@ -10,14 +10,22 @@ module.exports = (db, projects) => {
         JOIN projectImages ON projects.id = project_id;
       `
     )
-      .then((data) => {
-        console.log(data);
-        res.json(data.rows);
-      })
-      .catch((err) => {
-        // console.log("bad juju on projects DB", err);
-        res.status(500).send("bad juju on projects DB");
-      });
+    .then(({ rows: projects }) => {
+      console.log(       projects.reduce(
+        (previous, current) => ({ ...previous, [current.page_id]: current }),
+        {}
+      ));
+      res.json(
+        projects.reduce(
+          (previous, current) => ({ ...previous, [current.page_id]: current }),
+          {}
+        )
+      );
+    })
+    .catch((err) => {
+      // console.log("bad juju on projects DB", err);
+      res.status(500).send("bad juju on projects DB");
+    });
   });
 
   router.get("/projectTitles", (req, res) => {
