@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS projects
 CASCADE;
 DROP TABLE IF EXISTS projectImages
 CASCADE;
+DROP TABLE IF EXISTS previewImages;
 
 -- ************************************************************
 -- projects table
@@ -24,6 +25,12 @@ CREATE TABLE projectImages
   image_url VARCHAR(255)
 );
 
+CREATE TABLE previewImages
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
+  image_url VARCHAR(255)
+)
 -- CREATE TABLE singleProjectDetails
 -- (
 --   id SERIAL PRIMARY KEY NOT NULL,

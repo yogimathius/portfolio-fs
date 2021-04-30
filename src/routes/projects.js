@@ -5,9 +5,11 @@ module.exports = (db, projects) => {
     console.log("ping on projects");
     db.query(
       `
-        SELECT projects.id, title, text_body, project_url, page_id, image_url
+        SELECT projects.id, title, text_body, project_url, page_id, projectImages.image_url, ARRAY_AGG(previewImages.image_url) as previewImages
         FROM projects
-        JOIN projectImages ON projects.id = project_id;
+        JOIN projectImages ON projects.id = projectImages.project_id
+        JOIN previewImages ON projects.id = previewImages.project_id
+        GROUP BY projects.id, projectimages.image_url;
       `
     )
     .then(({ rows: projects }) => {
