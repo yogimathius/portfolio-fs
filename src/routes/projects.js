@@ -5,9 +5,11 @@ module.exports = (db, projects) => {
     console.log("ping on projects");
     db.query(
       `
-        SELECT projects.id, title, text_body, project_url, page_id, image_url
+        SELECT projects.id, title, text_body, text_body_background, project_url, page_id, projectImages.image_url, ARRAY_AGG(previewImages.image_url) as previewImages
         FROM projects
-        JOIN projectImages ON projects.id = project_id;
+        JOIN projectImages ON projects.id = projectImages.project_id
+        JOIN previewImages ON projects.id = previewImages.project_id
+        GROUP BY projects.id, projectimages.image_url;
       `
     )
     .then(({ rows: projects }) => {
@@ -28,20 +30,22 @@ module.exports = (db, projects) => {
     });
   });
 
-  router.get("/projectTitles", (req, res) => {
+  router.get("/projects/:id", (req, res) => {
+    const params = [req.params.id];
     console.log("ping on projects");
     db.query(
       `
-        SELECT projects.id, title
-        FROM projects;
-      `
+      SELECT projects.id, title, text_body, project_url, page_id, image_url
+      FROM projects JOIN projectImages ON projects.id = projectImages.project_id WHERE page_id = $1;
+      `,
+      (params)
     )
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         res.json(data.rows);
       })
       .catch((err) => {
-        // console.log("bad juju on projects DB", err);
+        console.log("bad juju on projects DB", err);
         res.status(500).send("bad juju on projects DB");
       });
   });
