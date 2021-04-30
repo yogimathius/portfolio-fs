@@ -5,7 +5,7 @@ module.exports = (db, projects) => {
     console.log("ping on projects");
     db.query(
       `
-        SELECT projects.id, title, text_body, project_url, page_id, projectImages.image_url, ARRAY_AGG(previewImages.image_url) as previewImages
+        SELECT projects.id, title, text_body, text_body_background, project_url, page_id, projectImages.image_url, ARRAY_AGG(previewImages.image_url) as previewImages
         FROM projects
         JOIN projectImages ON projects.id = projectImages.project_id
         JOIN previewImages ON projects.id = previewImages.project_id

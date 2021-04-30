@@ -12,6 +12,7 @@ CREATE TABLE projects
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
   text_body VARCHAR(2000) NOT NULL,
+  text_body_background VARCHAR(3000) NOT NULL,
   project_url VARCHAR (255) NOT NULL,
   page_id VARCHAR(25) NOT NULL
 );
