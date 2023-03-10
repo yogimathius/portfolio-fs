@@ -38,7 +38,7 @@ module.exports = function application(
   }));
   app.use(function (req, res, next) {
     //Enabling CORS
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", ["https://www.yogimathius.dev", "https://www.mathius.dev", "https://mathius-johnson.netlify.app/"]);
     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
       next();
