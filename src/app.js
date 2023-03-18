@@ -36,19 +36,10 @@ module.exports = function application(
   app.use(cors({
     origin: "https://www.yogimathius.dev"
   }));
-  app.use(function (req, res, next) {
-    //Enabling CORS
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-      next();
-  });
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
   app.use(helmet());
   app.use(bodyparser.json());
-
-  app.get("/", (req, res) => {
-    res.json({ message: "Welcome to birth api application." });
-  });  
   
   app.use("/api", projects(db));
   app.use('/uploads', express.static('uploads'))
@@ -73,6 +64,10 @@ module.exports = function application(
       });
   }
 
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
+  
   app.close = function() {
     return db.end();
   };
