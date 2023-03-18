@@ -1,0 +1,48 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply font-body;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.btn {
+			@apply flex items-center  font-bold tracking-widest  cursor-pointer  text-center no-underline object-contain uppercase group;
+	}
+
+	.btn-primary,
+	.btn-primary:visited {
+		@apply space-x-2 pr-4 text-white bg-dark-blue;
+	}
+	.btn-primary:hover,
+	.btn-primary:visited:hover {
+		@apply bg-cyan;
+	}
+	.btn-secondary,
+	.btn-secondary:visited {
+		@apply bg-white border-1 border-solid border-gray-dk-blue  py-2 px-3;
+	}
+	.btn-secondary:hover,
+	.btn-secondary:visited:hover {
+		@apply bg-gray-dk-blue border-gray-dk-blue  text-white;
+	}
+
+	.btn-disabled {
+		@apply opacity-30 cursor-not-allowed;
+	}
+
+	.icon-lightArrowDown:before {
+		content: "\e900";
+	}
+}
