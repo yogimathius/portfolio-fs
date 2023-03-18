@@ -6,18 +6,18 @@ insert into projects (title, text_body, text_body_background, project_url, page_
 ('Johnson Landscaping Website', 'This project was my first website, which had the privilege of being my personal business website from my previous profession. I used HTML5 along with CSS flexbox to build a fully responsive website, along with a PHP script for contacting my business.', 'This project can also use some revamping, but for the limited skill that I had at the time I believe the theme of it is quite nice. Looking back on it now, I intend to adjust the layout for better conformity.', 'https://johnsonlandscaping.netlify.app/index.html', 'johnson-landscaping');
 
 insert into projectImages (project_id, image_url) values
-(1, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/freeflow.png'),
-(2, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/sovereign-birth.png'),
-(3, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/scheduler.jpeg'),
-(4, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/yogimathius.jpeg'),
-(5, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping.jpeg');
+(1, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/freeflow.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereign-birth.png'),
+(3, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/scheduler.png'),
+(4, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/yogimathius.png'),
+(5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping.png');
 
 insert into previewImages (project_id, image_url) values
-(1, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/freeflow/screencapture-freeflow-network-netlify-app-2021-04-29-13_22_35.png'),
-(2, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-contact-2021-04-29-13_21_24.png'),
-(2, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-home-2021-04-29-13_20_42.png'),
-(2, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-offerings-2021-04-29-13_21_05.png'),
-(4, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/yogimathius/ympreviewone.png'),
-(5, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/screencapture-johnsonlandscaping-netlify-app-index-html-2021-04-29-13_27_48.png'),
-(5, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/jlpreviewone.png'),
-(5, 'https://raw.githubusercontent.com/mathiusjohnson/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/screencapture-johnsonlandscaping-netlify-app-about-html-2021-04-29-13_28_05.png');
+(1, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/freeflow/screencapture-freeflow-network-netlify-app-2021-04-29-13_22_35.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-contact-2021-04-29-13_21_24.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-home-2021-04-29-13_20_42.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-offerings-2021-04-29-13_21_05.png'),
+(4, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/yogimathius/ympreviewone.png'),
+(5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/screencapture-johnsonlandscaping-netlify-app-index-html-2021-04-29-13_27_48.png'),
+(5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/jlpreviewone.png'),
+(5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/screencapture-johnsonlandscaping-netlify-app-about-html-2021-04-29-13_28_05.png');
