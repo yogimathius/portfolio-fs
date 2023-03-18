@@ -2,6 +2,9 @@
   "name": "portfolio-mj",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "19.6.1"
+  },
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
