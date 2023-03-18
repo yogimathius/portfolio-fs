@@ -60,6 +60,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://portfolio-api-production-f222.up.railway.app/"
+  }
 }
