@@ -10,7 +10,7 @@ const About = () => {
       <h1 className="text-3xl md:text-5xl font-header text-maximum-blue-green uppercase mb-4  text-center md:text-left">About Me</h1>
       <div className="space-y-6 text-lg md:text-2xl">
         <p> 
-        I’m a junior full-stack developer looking for a new role in an exciting company. I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript. When writing JavaScript code, I mostly use React and Express, but I can adapt to whatever tools are required. I’m based in Squamish, BC, but I’m happy working remotely and have experience in remote teams. When I’m not coding, you’ll find me outdoors. I love being out in nature whether that’s going for a walk, run or cycling. I’d love you to check out my work.
+        I’m a full-stack developer looking for a new role in an exciting company. I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript. When writing JavaScript code, I mostly use React and Express, but I can adapt to whatever tools are required. I’m based in Squamish, BC, but I’m happy working remotely and have experience in remote teams. When I’m not coding, you’ll find me outdoors. I love being out in nature whether that’s going for a walk, run or cycling. I’d love for you to check out my work.
         </p>
       </div>
       <div className="flex justify-center md:justify-start">
