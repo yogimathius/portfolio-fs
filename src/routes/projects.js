@@ -9,7 +9,8 @@ module.exports = (db, projects) => {
         FROM projects
         JOIN projectImages ON projects.id = projectImages.project_id
         JOIN previewImages ON projects.id = previewImages.project_id
-        GROUP BY projects.id, projectimages.image_url;
+        GROUP BY projects.id, projectimages.image_url
+        ORDER BY projects.id;
       `
     )
     .then(({ rows: projects }) => {
