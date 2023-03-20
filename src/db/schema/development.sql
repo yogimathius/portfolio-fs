@@ -8,15 +8,17 @@ insert into projects (title, text_body, text_body_background, project_url, page_
 
 insert into projectImages (project_id, image_url) values
 (1, 'https://raw.githubusercontent.com/yogimathius/portfolio-fs/main/src/client/src/assets/images/new_template_ui.png'),
-(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/freeflow.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio-fs/main/src/client/src/assets/images/portfolio/freeflow/freeflow-dash.png'),
 (3, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereign-birth.png'),
 (4, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/scheduler.png'),
 (5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/yogimathius.png'),
 (6, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping.jpeg');
 
 insert into previewImages (project_id, image_url) values
-(2, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/freeflow/screencapture-freeflow-network-netlify-app-2021-04-29-13_22_35.png'),
+(1, 'https://raw.githubusercontent.com/yogimathius/portfolio-fs/main/src/client/src/assets/images/new_template_ui.png'),
+(2, 'https://raw.githubusercontent.com/yogimathius/portfolio-fs/main/src/client/src/assets/images/portfolio/freeflow/freeflow-login.png'),
 (3, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/sovereignbirth/screencapture-sovereign-birth-netlify-app-home-2021-04-29-13_20_42.png'),
+(4, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/scheduler.png'),
 (5, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/yogimathius/ympreviewone.png'),
 (6, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/jlpreviewone.png'),
 (6, 'https://raw.githubusercontent.com/yogimathius/portfolio2.0/master/src/assets/images/portfolio/johnsonlandscaping/screencapture-johnsonlandscaping-netlify-app-about-html-2021-04-29-13_28_05.png');
